@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
+	<head>
+		<meta charset="UTF-8">
 	
 		<title>Eat Da Burger!</title>
 		<!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
-		{{!-- <script src="https://code.jquery.com/jquery.js"></script> --}}
 
 	</head>
 	<body>
+		<!-- Page Container -->
+    	<div class="container-fluid">
+    
+      	<div class="row">
+      
+   		<div class="jumbotron">
+    	<h1>Eat Da Burger!</h1>      
+    	<p>Choose a Burger from the list. Then devour it! <br> 
+    	Add your own burger to the list using the form below. The list on the left shows the burgers you've devoured.</p>   
+
+	<!--Content from index.handlebars-->
 		{{{ body }}}
+
+		 <!-- Input New Burgers Form -->
+      <form action="burger/create" method="POST"> 
+        
+        <!-- Text Area Input -->
+        <div class="row">
+          <!-- Empty Div to help center textarea -->
+          <div class="col-md-3"></div> 
+
+          <!-- Burger Input Box -->
+          <div class="form-group col-md-6">
+            <label for="new_burger" class="submitFont"><h3 id="create">Create a new burger!</h3></label>
+            <textarea class="form-control" type="text" columns="6" rows="2" id="new_burger required value=" name="burger_name"></textarea>
+          </div>
+         
+          <div class="col-md-3"></div> 
+        </div>
+      
+        <!-- Submit Button -->
+        <div class="col-md-12 text-center">   
+
+        <button id="submit-button" type="submit" class="btn btn-success">Make my Burger!</button>
+        </div>
+      </form>
+      <br>
+    </div>
+
 	</body>
 </html>
 

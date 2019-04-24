@@ -1,5 +1,5 @@
 <div class="row">
-  <center>
+
     <!-- Left side (Burgers Available) -->
     <div class="col-md-4">
       <h3 class="submitFont">Burgers Available</h3>
@@ -29,16 +29,16 @@
       <h3 class="submitFont">Burgers Devoured</h3>
       <div id="alreadyEaten">
 
-        <!-- Dynamically Insert Devoured Burgers Here -->
+        <!-- Insert Devoured Burgers Here -->
         {{#each burgers}}
           {{#if this.devoured}}
             <div class="input-group">
-              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>              
             </div>
           {{/if}}
         {{/each}}
 
       </div>
     </div>
-  </center>
+
 </div>

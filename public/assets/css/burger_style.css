@@ -1,0 +1,31 @@
+body {
+    background-image: url("../img/burgerimg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .jumbotron h1{
+      color: orangered;  
+  }
+  
+  .jumbotron{
+      padding-top: 1%;
+      background-color:transparent !important;
+  }
+  
+  .submitFont{
+      color: white;    
+  }
+
+  h1 {
+      text-align: center;
+  }
+
+  p {
+      text-align: center;
+      color: white;
+  }
+
+  #submit-button {
+      margin: auto;
+  }
