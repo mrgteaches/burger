@@ -1,35 +1,44 @@
-<h1>Eat Da Burger!</h1>
+<div class="row">
+  <center>
+    <!-- Left side (Burgers Available) -->
+    <div class="col-md-4">
+      <h3 class="submitFont">Burgers Available</h3>
+      <div id="burgersAvailable">
 
+        <!-- Dynamically Add User Burgers Here -->
+        {{#each burgers}}
+          {{#unless devoured}}
+          <form action="burger/eat/{{id}}" method="POST">
+            <div class="input-group">
+              <li class="form-control">{{id}}. {{burger_name}}</li>
+                <span class="input-group-btn">
+                  <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+                </span>
+            </div>
+          </form>
+          {{/unless}}
+        {{/each}}
 
-<ul>
-  {{#each burgers}}
-   
-    {{#unless devoured}}
-      {{!-- {{> cats/cat-block sleep=true}} --}}
-      <button data-id="{{this.id}}" class="devburger">Devour!</button>
-    {{/unless}}
-  {{/each}}
-</ul>
+      </div>
+    </div>
 
-<h2>Burgers that are devoured!</h2>
+    <div class="col-md-4"></div> 
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{!-- {{> cats/cat-block sleep=false}} --}}
-      <button data-id="{{this.id}}" class="devburger">Devour</button>
-    {{/if}}
-  {{/each}}
-</ul>
+    <!-- Right side (Burgers Devoured) -->
+    <div class="col-md-4">
+      <h3 class="submitFont">Burgers Devoured</h3>
+      <div id="alreadyEaten">
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+        <!-- Dynamically Insert Devoured Burgers Here -->
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <div class="input-group">
+              <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+            </div>
+          {{/if}}
+        {{/each}}
 
-  <div class="form-group">
-    <label for="ca">Add a Burger</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  
-  <button type="submit">Submit</button>
-</form>
+      </div>
+    </div>
+  </center>
+</div>
